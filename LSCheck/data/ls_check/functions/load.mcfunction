@@ -2,6 +2,11 @@
 #
 # @private
 
+#>
+# ls_check管理用スコア
+# @public
+scoreboard objectives add ls_check dummy
+
 # 初期化処理
 execute unless score LSC.init_num_loop ls_check matches -2147483648..2147483647 run function ls_check:init
 

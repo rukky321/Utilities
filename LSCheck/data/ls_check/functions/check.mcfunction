@@ -9,10 +9,10 @@
 # @public
 
 #	識別用のタグがついたマーカーを召喚する
-execute anchored eyes positioned ^ ^ ^ run summon marker ~ ~ ~ {Tags:["LSC.marker"]}
+execute at @s anchored eyes positioned ^ ^ ^ run summon marker ~ ~ ~ {Tags:["LSC.marker"]}
 
 # マーカーの向きを実行者の向いてる方向に設定
-execute anchored eyes positioned ^ ^ ^ run data modify entity @e[sort=nearest,limit=1,tag=LSC.marker] Rotation set from entity @s Rotation
+execute at @s anchored eyes positioned ^ ^ ^ run data modify entity @e[tag=LSC.marker,sort=nearest,limit=1] Rotation set from entity @s Rotation
 
 # カウント用スコアを0に初期化
 scoreboard players set LSC.count ls_check 0
@@ -21,19 +21,20 @@ scoreboard players set LSC.count ls_check 0
 execute unless score LSC.num_loop ls_check matches -2147483648..2147483647 run scoreboard players operation LSC.num_loop ls_check = LSC.init_num_loop ls_check
 
 #	ループ関数を実行
-execute anchored eyes positioned ^ ^ ^ as @e[sort=nearest,limit=1,tag=LSC.marker] if score LSC.count ls_check < LSC.num_loop ls_check run function ls_check:loop
+execute at @s anchored eyes positioned ^ ^ ^ as @e[tag=LSC.marker,sort=nearest,limit=1] if score LSC.count ls_check < LSC.num_loop ls_check anchored eyes positioned ^ ^ ^ run function ls_check:loop
 
 # 対象が見つかれば、その対象にLSC.detectedタグを付与する。
-execute as @e[tag=LSC_detected2] run tag @s add LSC.detected
+execute as @e[tag=LSC.detected3] run tag @s add LSC.detected
 
 # 返り値の設定
-execute store success score LSC.detected ls_check if entity @e[tag=LSC_detected2]
+execute store success score LSC.detected ls_check if entity @e[tag=LSC_detected3]
 
 # タグを削除
-execute as @e[tag=LSC_detected2] run tag @s remove LSC.detected2
+execute as @e[tag=LSC.detected3] run tag @s remove LSC.detected3
+
 
 #	マーカーをキル
-execute anchored eyes positioned ^ ^ ^ run kill @e[sort=nearest,limit=1,tag=LSC.marker]
+execute at @s anchored eyes positioned ^ ^ ^ run kill @e[sort=nearest,limit=1,tag=LSC.marker]
 
 # スコアのリセット
 scoreboard players reset LSC.count ls_check

@@ -14,3 +14,7 @@ kill @e[type=interaction,tag=CC.interaction]
 
 # CC.targetタグがついたプレイヤの頭にインタラクションを召喚
 execute as @a[tag=CC.target] at @s anchored eyes positioned ^ ^ ^ positioned ~ ~-0.5 ~ run summon interaction ~ ~ ~ {Tags:["CC.interaction"]}
+
+# テスト用
+#execute if entity @e[tag=CC.left_clicked] run say left
+#execute if entity @e[tag=CC.right_clicked] run say right
