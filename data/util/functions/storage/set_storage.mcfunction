@@ -1,6 +1,6 @@
 #> util:storage/set_storage
 # 実行者の専用ストレージを作成し、util storage[0]に持ってくる
-# @within 
+# @public
 
 #ストレージが作られていなければ作成
 execute unless score @s Util.StorageID matches -2147483648..2147483647 run function util:storage/create_new_storage
