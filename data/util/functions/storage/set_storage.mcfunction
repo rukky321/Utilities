@@ -1,5 +1,5 @@
 #> util:storage/set_storage
-# 実行者の専用ストレージを作成し、util storage[0]に持ってくる
+# 実行者の専用ストレージを作成し、util storage[0].dataに持ってくる
 # @public
 
 #ストレージが作られていなければ作成
