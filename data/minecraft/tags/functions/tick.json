@@ -1,6 +1,5 @@
 {
     "values": [
-        "click_check:tick",
-        "ls_check:tick"
+        "util:tick"
     ]
 }

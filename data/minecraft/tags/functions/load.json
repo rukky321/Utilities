@@ -1,6 +1,5 @@
 {
     "values": [
-        "click_check:load",
-        "ls_check:load"
+        "util:load"
     ]
 }
