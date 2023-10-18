@@ -1,6 +1,6 @@
-#> ls_check:tick
+#> util:ls_check/tick
 #
-# @private
+# @within util:tick
 
 # テスト用
 #execute as @e[tag=!Util.LSC.detected] run data modify entity @s Glowing set value 0

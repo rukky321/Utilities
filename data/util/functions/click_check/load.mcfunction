@@ -1,26 +1,21 @@
-#> click_check:load
+#> util:click_check/load
 #
-# @private
-
-#>
-# From click_check  
-# click_check管理用スコア  
-# @within click_check:**
-scoreboard objectives add click_check dummy
+# @within util:load
 
 # タグを定義
+
 #>
-# From click_check  
+#@defined util:click_check/load 
 # クリックを検知したいプレイヤに対してつけるタグ
 # @public
 #define tag Util.CC.target
 #> 
-# From click_check  
+#@defined util:click_check/load  
 # 左クリックしたプレイヤにつくタグ  
 #@public
 #define tag Util.CC.left_clicked 
 #> 
-# From click_check  
+#@defined util:click_check/load  
 # 右クリックしたプレイヤにつくタグ  
 #@public
 #define tag Util.CC.right_clicked 
