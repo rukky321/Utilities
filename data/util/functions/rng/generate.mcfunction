@@ -1,7 +1,7 @@
 #> util:rng/generate
 #	@input score Util.RNG.max Util 生成される乱数の最大値-1 4なら0から3の値になる
 # @output score  Util.RNG.value Util
-# @private
+# @public
 
 # インプット値が不正な値である場合の処理
 execute unless score Util.RNG.max Util matches -2147483648..2147483647 run scoreboard players set Util.RNG.max Util 100
